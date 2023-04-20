@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Juego de suma</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="../../style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="plus.ico">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Matemáticas</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#menu">Áreas</a></li>
+            <li><a href="#services">Más Recursos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </header>
+
+	<div class="container">
+        <h1 class="game-title">JUEGO DE SUMA</h1>
+        <div class="operations">
+            <div class="izquierdo">
+                <div class="container-operacion">
+                    <span id="suma">9 + 9 = </span>
+                    <span class="resultado" id="resultado"> 18</span>
+                </div>
+                <span class="msj" id="msj"></span>
+            </div>
+            <div class="derecha">
+                <span id="op1" class="opcion" onclick="controlarRespuesta(this)">18</span>
+                <span id="op2" class="opcion" onclick="controlarRespuesta(this)">17</span>
+                <span id="op3" class="opcion" onclick="controlarRespuesta(this)">8</span>
+            </div>
+        </div>
+	</div>
+
+    <div id="progress">
+        <div class="food" id="bar">
+            <p id="score">15</p>
+        </div>
+    </div>
+
+    <p id="lives"></p>
+    <div class="footer">
+		<a class="btn" href="../../math.html">Regresar</a>
+	</div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+body{
+	text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+    height: 100vh;
+}
+
+.container{
+	max-width: 700px;
+	min-width: 500px;
+	display: flex;
+    flex-direction: column;
+    gap: 24px;
+	padding: 12px 0;
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+}
+
+.game-title {
+	color: var(--main-color);
+}
+
+.operations{
+	max-width: 700px;
+	border-radius: 20px;
+	display: flex;
+}
+
+.izquierdo{
+	width: 70%;
+	font-size: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    color: var(--bg-color);
+}
+
+.izquierdo .msj{
+	font-size: 40px;
+	height: 50px;
+}
+
+.container-operacion {
+	display: flex;
+}
+
+.derecha{
+    width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.derecha .opcion{
+	width: 80px;
+	height: 80px;
+	font-size: 50px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.derecha .opcion:hover{
+	background-color: var(--main-color);
+}
+
+#progress {
+    display: inline-block;
+    width: 400px;
+    height: 20px;
+    margin: 35px;
+    border-radius: 20px;
+    background: var(--bg-color);
+}
+
+#bar {
+    border-radius: 20px;
+    width: 0%;
+    height: 100%;
+    transition: width;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(.36,.55,.63,.48);
+}
+
+#score {
+	padding-left: 12px;
+	text-align: initial;
+}
+
+.food {
+    background-color: var(--main-color);
+}
+
+#score p{
+	padding: 12px 2px;
+}

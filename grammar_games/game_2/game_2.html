@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../../style.css">
+        <title>Juego Del Ahorcado</title>
+        <style>
+            body{
+                width: 960px;
+                margin: 0 auto;
+            }
+            h1{
+                text-align: center;
+            }
+            #pantalla{
+                border: groove 8px rgb(19, 86, 175);
+                background: rgb(68, 208, 243);   
+            }
+            #boton{
+                background-color: rgb(90, 243, 76);
+                color: white;
+                font-size: 20px;
+                text-align: center;
+                font-weight: bolder;
+                padding: 3px;
+                border: solid 2px black;
+            }
+            #boton:hover{ /* color del puntero sobre el boton */
+                background-color: lightcoral;
+                font-size: 22px;
+                border: groove 4px red;
+            }
+        </style>
+        </head>
+    <body>
+        <h1> Juego Del Ahorcado</h1>
+        <canvas id="pantalla" width="960px" height="450px"> <!-- etiqueta del canvas con sus medidas en la pantalla -->
+            
+        </canvas>
+        <!-- El boton que nos sirve para recargar la pagina y asi generar una nueva palabra y volver a jugar -->
+        <button id="boton" type="reset" onclick="javascript:window.location.reload();">Volver a Jugar</button>
+        <div class="footer">
+            <a class="btn" href="../../grammar.html">Página de Inicio</a>
+        </div>
+<!-insertamos la carpeta de Java scrip->
+<script src="palabras.js"></script>
+           
+    </body>
+</html>

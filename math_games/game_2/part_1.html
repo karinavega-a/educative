@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../style.css">
+
+    <style>
+      /* estilos para las imágenes */
+      .imagen {
+        width: 170px;
+        height: 170px;
+        border: 2px solid rgb(7, 214, 42);
+        margin: 10px;
+        transition: border-color 0.2s ease; /* cambio de color del borde */
+        cursor: pointer; /* Cambia el cursor del mouse para indicar que la imagen es seleccionable */
+      }
+      
+      /* Color de la imagen seleccionada */
+      .seleccionado {
+        border-color: red; /* Cambia el color del borde cuando la imagen es seleccionada */
+      }
+
+       /* Define los estilos para el mensaje */
+       #mensaje {
+        margin-top: 10px;
+        font-weight: bold;
+        color: rgb(17, 16, 17);
+        display: none; /* Inicia oculto */
+       }
+
+
+    </style>
+  </head>
+  <body>
+
+    <h3 style="text-align: center; font-family:Goudy Stout;">JUEGO 1</h3>
+    <h2 style="text-align: center; font-style: Goudy stout; ">Selecciona el tucán que sea diferente de los demás.</h2>
+    <!-- Imágenes -->
+    
+    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
+    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
+    <img src="https://img2.freepng.es/20200110/jaw/transparent-cartoon-bird-animal-figure-beak-piciformes-5e193939a38889.5444155615787113536698.jpg" class="imagen" onclick="seleccionarImagen(this)">
+    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
+    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
+    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
+    
+    
+    
+ <!--Mensaje para mostrar -->
+    <div id="mensaje"></div>
+
+    
+    <script>
+      function seleccionarImagen(img) {
+        
+        var imagenes = document.querySelectorAll(".imagen");
+        for (var i = 0; i < imagenes.length; i++) {
+          imagenes[i].classList.remove("seleccionado");
+          document.getElementById('demo').style.display = 'block';
+        }
+        
+        /* la imagen seleccionada */
+        img.classList.add("seleccionado");
+        
+        
+        
+ /* mensaje debajo de la imagen seleccionada */
+ var mensaje = document.getElementById("mensaje");
+        mensaje.style.display = "block"; /* para mostrar el mensaje */
+        mensaje.innerHTML = "La imagen seleccionada es correcta."; /* Cambia el contenido del mensaje */
+        
+
+      }
+    </script>
+
+<script>
+  function irAotraPagina() {
+    window.location.href = "D:\Pagina Interactiva\math_games\game_2\part_2.ht";
+  }
+</script>
+<div class="footer">
+    <a class="btn" href="part_2.html">Siguiente</a>
+</div>
+<div class="footer">
+    <a class="btn" href="../../math.html">Página de Inicio</a>
+</div>
+
+<button id="demo" style="display: none; " onclick="irAotraPagina()">Siguiente</button>
+
+<style>
+
+
+body {
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-color-cartoon-childrens-festival-board-background-material-design-day-backgrounddisplay-board-image_69964.jpg);
+    background-size: cover;
+  }
+</style>
+
+
+</html>
