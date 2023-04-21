@@ -3,7 +3,7 @@ const numQuestions = 15;
 let lives = maxLives;
 let currentQuestion = 0;
 
-var num1, num2, respuesta, score, scoreHtml;
+var num1, num2, respuesta, score;
 score = 0;
 txt_suma = document.getElementById("suma");
 op1 = document.getElementById("op1");
@@ -11,13 +11,14 @@ op2 = document.getElementById("op2");
 op3 = document.getElementById("op3");
 txt_msj = document.getElementById("msj");
 txt_resultado = document.getElementById("resultado");
-scoreHtml = document.getElementById("score");
-livesHtml = document.getElementById("lives");
+scoreHtml = document.getElementById("bar-score");
+livesHtml = document.getElementById("bar-lives");
 
 function comenzar(){
 	txt_resultado.innerHTML = "?";
 	txt_msj.innerHTML = "";
-    livesHtml.innerHTML = lives;
+	scoreHtml.innerHTML = `${score}/${numQuestions}`;
+	livesHtml.innerHTML = `${lives}/${maxLives}`;
 
 	//genera la suma - Numeros aleatorios entre 0 1 9
 	num1 = Math.round(Math.random()*9);
@@ -49,6 +50,7 @@ function comenzar(){
 function loseLive() {
     lives--;
     livesHtml.innerHTML = lives;
+	reducirBarraLives((lives/maxLives)*100)
 }
 
 function controlarRespuesta(opcionElegida){	
@@ -56,17 +58,18 @@ function controlarRespuesta(opcionElegida){
 	if(respuesta == opcionElegida.innerHTML){
 		txt_msj.innerHTML = "¡Excelente!";
 		txt_msj.style.color="green";
-        currentQuestion++;
-        score++;
-		avanzarBarra((score/numQuestions)*100); // progress bar
+         // progress bar
         if(currentQuestion < numQuestions) {
+			currentQuestion++;
+			score++;
+			avanzarBarraScore((score/numQuestions)*100);
             setTimeout(comenzar, 2000);
         }
 	}else{
 		txt_msj.innerHTML = "Intenta otra vez";
 		txt_msj.style.color="red";
-        loseLive()
         if(lives > 0) {
+			loseLive()
             setTimeout(limpiar, 2000);
         }
 	}
@@ -82,12 +85,18 @@ comenzar();
 
 
 
-var bar = document.getElementById('bar');
-var progress = document.getElementById('progress');
-bar.style.width = `0%`;
-
-function avanzarBarra(porcentaje) {
-    bar.style.transitionDuration = `0.5s`;
-    bar.style.width =`${porcentaje}%`;
+var scoreBar = document.getElementById('score_bar');
+scoreBar.style.width = `0%`;
+function avanzarBarraScore(porcentaje) {
+    scoreBar.style.transitionDuration = `0.5s`;
+    scoreBar.style.width =`${porcentaje}%`;
 	scoreHtml.innerHTML = `${score}/${numQuestions}`;
+}
+
+var livesBar = document.getElementById('lives_bar');
+livesBar.style.width = `100%`;
+function reducirBarraLives(porcentaje) {
+    livesBar.style.transitionDuration = `0.5s`;
+    livesBar.style.width =`${porcentaje}%`;
+	livesHtml.innerHTML = `${lives}/${maxLives}`;
 }
