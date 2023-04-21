@@ -126,7 +126,18 @@
             <!---Más recursos call to action-->
     <section class="cta">
         <h2>Si requiere más información <br> Contacte aquí</h2>
-        <a href="#" class="btn-inf">Quiero más información</a>
+        <a id="enviar-correo" class="btn-inf">Quiero más información</a>
+        <script>
+            const botonEnviarCorreo = document.getElementById("enviar-correo");
+            
+            botonEnviarCorreo.addEventListener("click", function() {
+                const destinatario = "contactduck1@gmail.com";
+                const asunto = "¡Quiero mas infromación!";
+                const cuerpo = "";
+            
+              window.location.href = "mailto:" + destinatario + "?subject=" + encodeURIComponent(asunto) + "&body=" + encodeURIComponent(cuerpo);
+            });
+            </script>
 
     </section>
 
