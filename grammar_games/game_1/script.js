@@ -1,4 +1,4 @@
-let preguntas = ["grammar_img/imagen_1.png", "grammar_img/imagen_2.png", "grammar_img/imagen_3.png", "grammar_img/ala.png", "grammar_img/imagen_5.png"];
+let preguntas = ["¿Qué palabra está bien escrita?", "¿Cuál de las siguientes frases es correcta?", "¿En que palabra sobra la tilde?", "¿Que palabra completa la frase \"¡El _ del avión es grande!\"?", "¿Cómo se escribe la palabra \"caminar\" en presente?"];
 
 
 let correcta = [2,2,1,1,0];
@@ -37,7 +37,7 @@ function cargarImagenes(){
     else{
         limpiarOpciones();
 
-        document.getElementById("imgBandera").src = " " + preguntas[posActual];
+        document.getElementById("pregunta").innerHTML = " " + preguntas[posActual];
         document.getElementById("n0").innerHTML = opciones[posActual][0];
         document.getElementById("n1").innerHTML = opciones[posActual][1];
         document.getElementById("n2").innerHTML = opciones[posActual][2];
