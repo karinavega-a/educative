@@ -17,52 +17,171 @@
         <li><a href="/educative/index.html#services">Más Recursos</a></li>
         <li><a href="/educative/index.html#contact">Contacto</a></li>
       </ul>
-  </header>
 
-    <h3 style="text-align: center; font-family:Goudy Stout;">JUEGO 2</h3>
-    <h2 style="text-align: center; font-style: Goudy stout; ">Selecciona el león que sea diferente de los demás.</h2>
-    <!-- Imágenes -->
-    
-    <img src="https://www.clipartmax.com/png/middle/414-4140025_lion-clipart-zoo-animal-dibujos-animados-de-un-leon.png" class="imagen" onclick="(this)">
-    <img src="https://www.clipartmax.com/png/middle/414-4140025_lion-clipart-zoo-animal-dibujos-animados-de-un-leon.png" class="imagen" onclick="(this)">
-    <img src="https://www.clipartmax.com/png/middle/414-4140025_lion-clipart-zoo-animal-dibujos-animados-de-un-leon.png" class="imagen" onclick="(this)">
-    <img src="https://www.clipartmax.com/png/middle/414-4140025_lion-clipart-zoo-animal-dibujos-animados-de-un-leon.png" class="imagen" onclick="(this)">
-    <img src="https://i.pinimg.com/550x/49/25/b4/4925b4a49395ac89c100e06d7917c830.jpg" class="imagen" onclick="seleccionarImagen(this)">
-    <img src="https://www.clipartmax.com/png/middle/414-4140025_lion-clipart-zoo-animal-dibujos-animados-de-un-leon.png" class="imagen" onclick="(this)">
-    
-    
-    
- <!--Mensaje para mostrar -->
- <div id="mensaje"></div>
+<head>
+	<meta charset="UTF-8">
+	<title>Adivina la imagen</title>
+	<style>
+		#contenedor {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		
+		#contenedor img {
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+			border: 5px solid white;
+			border-radius: 10px;
+			cursor: pointer;
+			transition: transform .2s;
+		}
+		
+		#contenedor img:hover {
+			transform: scale(1.1);
+			border: 5px solid #ff9100;
+		}
+		
+		#trofeoMensaje {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 50px;
+			text-align: center;
+		}
+
+#trofeoMensaje img {
+    width: 320px;
+}
+
+
+
+#trofeoMensaje p {
+    color: hwb(135 5% 17%);
+}
+
+	</style>
+	<meta charset="UTF-8">
+	<title>Mi página web</title>
+	<style>
+		h1 {
+			color: #ffffff;
+			font-family: Arial, sans-serif;
+		}
+	</style>
+
+
+
+</head>
+<body>
+	<h1>Selecciona la imagen que sea un Pez Globo</h1>
+	<div id="contenedor">
+		<img src="https://th.bing.com/th/id/OIP.TQ15IiwR28QMX_QAqSA4awHaF_?w=232&h=186&c=7&r=0&o=5&pid=1.7" id="nemo">
+		<img src="https://th.bing.com/th/id/R.ac36690f67dedf71723871e320ad4fb2?rik=H3DhsWS5UdGJNA&pid=ImgRaw&r=0" id="tiburon">
+		<img src="https://th.bing.com/th/id/OIP.cDUEgywX9PNrbaCZ7hNX_wHaHO?w=221&h=215&c=7&r=0&o=5&pid=1.7" id="delfin">
+        <img src="https://th.bing.com/th/id/OIP.D4fcmW0hd-RTZXcUG_8eKgHaGJ?w=256&h=212&c=7&r=0&o=5&pid=1.7" id="Pez globo">
+        <img src="https://th.bing.com/th/id/OIP.E3UA9Ihw82-Mt_T6pOIefAHaEV?w=321&h=188&c=7&r=0&o=5&pid=1.7" id="tilápia">
+		<img src="https://th.bing.com/th/id/OIP.YA7JBKGGJxB9wA3db0fpqwHaG7?w=204&h=191&c=7&r=0&o=5&pid=1.7" id="ballena">
+	</div>
+
+
+
 
     
- <script>
-   function seleccionarImagen(img) {
-     
-     var imagenes = document.querySelectorAll(".imagen");
-     for (var i = 0; i < imagenes.length; i++) {
-       imagenes[i].classList.remove("seleccionado");
-     }
-     
-     /* la imagen seleccionada */
-     img.classList.add("seleccionado");
-     
-     
-     
-/* mensaje debajo de la imagen seleccionada */
-var mensaje = document.getElementById("mensaje");
-     mensaje.style.display = "block"; /* para mostrar el mensaje */
-     mensaje.innerHTML = "La imagen seleccionada es correcta."; /* Cambia el contenido del mensaje */
-     
+	<img src="https://i.imgur.com/9ThqsgJ.png" id="trofeo" style="display: none;">
+	<div id="trofeoMensaje" style="display: none;">
+		<img src="https://i.pinimg.com/originals/a3/51/89/a35189478af411689e7781cd9bc5627c.jpg" alt="Trofeo" width="200">
+		<p>¡Felicidades, acertaste!</p>
+        <button onclick="window.location.href='pruebajuego2.html'"style="background-color: orange; color: white; padding: 20px;">Siguiente Nivel</button>
 
-   }
+        </div><button onclick="window.location.href='login.html'" style="background-color: orange; color: white; padding: 20px;">Ir al login</button>
 
-</script>
-<div class="footer">
-    <a class="btn" href="part_3.html">Siguiente</a>
-</div>
-<div class="footer">
-    <a class="btn" href="../../math.html">Página de Inicio</a>
-</div>
+	<script>
+var Pez = document.getElementById("Pez globo");
+var nemo = document.getElementById("nemo");
+var tiburon = document.getElementById("tiburon");
+var delfin= document.getElementById("delfin");
+var tilápia = document.getElementById("tilápia");
+var ballena = document.getElementById("ballena");
+var trofeo = document.getElementById("trofeo");
+var trofeoMensaje = document.getElementById("trofeoMensaje");
 
+Pez.onclick = function() {
+	if (Pez.getAttribute("src") == "https://th.bing.com/th/id/OIP.D4fcmW0hd-RTZXcUG_8eKgHaGJ?w=256&h=212&c=7&r=0&o=5&pid=1.7") {
+		trofeo.style.display = "block";
+		trofeoMensaje.style.display = "flex";
+	}
+}
+nemo.onclick = function() {
+	if (nemo.getAttribute("src") == "https://th.bing.com/th/id/OIP.TQ15IiwR28QMX_QAqSA4awHaF_?w=232&h=186&c=7&r=0&o=5&pid=1.7") {
+		nemo.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+tiburon.onclick = function() {
+	if (tiburon.getAttribute("src") == "https://th.bing.com/th/id/R.ac36690f67dedf71723871e320ad4fb2?rik=H3DhsWS5UdGJNA&pid=ImgRaw&r=0") {
+		tiburon.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+delfin.onclick = function() {
+	if (delfin.getAttribute("src") == "https://th.bing.com/th/id/OIP.cDUEgywX9PNrbaCZ7hNX_wHaHO?w=221&h=215&c=7&r=0&o=5&pid=1.7") {
+		delfin.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+tilápia.onclick = function() {
+	if (tilápia.getAttribute("src") == "https://th.bing.com/th/id/OIP.E3UA9Ihw82-Mt_T6pOIefAHaEV?w=321&h=188&c=7&r=0&o=5&pid=1.7") {
+		tilápia.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+ballena.onclick = function() {
+	if (ballena.getAttribute("src") == "https://th.bing.com/th/id/OIP.YA7JBKGGJxB9wA3db0fpqwHaG7?w=204&h=191&c=7&r=0&o=5&pid=1.7") {
+		ballena.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+
+window.onclick = function(event) {
+	if (event.target == trofeo) {
+		trofeo.style.display = "none";
+		trofeoMensaje.style.display = "none";
+	}
+}
+
+	</script>
+
+<style>
+	body {
+		background-color: #0e0d0d; /* Cambia el color aquí */
+	}
+</style>
+
+
+</body>
 </html>
