@@ -20,47 +20,107 @@
   </header>
 
     <h3 style="text-align: center; font-family:Goudy Stout;">JUEGO 1</h3>
-    <h2 style="text-align: center; font-style: Goudy stout; ">Selecciona el tucán que sea diferente de los demás.</h2>
-    <!-- Imágenes -->
-    
-    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
-    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
-    <img src="https://img2.freepng.es/20200110/jaw/transparent-cartoon-bird-animal-figure-beak-piciformes-5e193939a38889.5444155615787113536698.jpg" class="imagen" onclick="seleccionarImagen(this)">
-    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
-    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
-    <img src="https://www.clipartmax.com/png/middle/1-10467_jungle-babies-clip-art-animales-de-la-selva-animados.png" class="imagen" onclick="(this)">
-    
-    
-    
- <!--Mensaje para mostrar -->
-    <div id="mensaje"></div>
+   <br>
+	<h1>Selecciona la imagen que sea un perro</h1>
+	<div id="contenedor">
+		<img src="https://th.bing.com/th/id/OIP.EhBW1tWEpmdhJNrCy_d2lwHaIW?w=171&h=193&c=7&r=0&o=5&pid=1.7" id="gato">
+		<img src="https://th.bing.com/th/id/OIP.-DeSsS5WrPJNxTsHttMELQHaH5?w=196&h=209&c=7&r=0&o=5&pid=1.7" id="perro">
+		<img src="https://th.bing.com/th/id/R.96334541e6f519711607aa447a64b927?rik=dn9EZ8XnMJL6xQ&pid=ImgRaw&r=0" id="conejo">
+		<img src="https://th.bing.com/th/id/OIP.HYflcWWCFq6Pbnnjos-IJwHaIO?w=173&h=192&c=7&r=0&o=5&pid=1.7" id="pajaro">
 
-    
-    <script>
-      function seleccionarImagen(img) {
-        
-        var imagenes = document.querySelectorAll(".imagen");
-        for (var i = 0; i < imagenes.length; i++) {
-          imagenes[i].classList.remove("seleccionado");
-        }
-        
-        /* la imagen seleccionada */
-        img.classList.add("seleccionado");
-        
-        
-        
- /* mensaje debajo de la imagen seleccionada */
- var mensaje = document.getElementById("mensaje");
-        mensaje.style.display = "block"; /* para mostrar el mensaje */
-        mensaje.innerHTML = "La imagen seleccionada es correcta."; /* Cambia el contenido del mensaje */
-        
-
-      }
-</script>
-<div class="footer">
-    <a class="btn" href="part_2.html">Siguiente</a>
-    <a class="btn" href="../../math.html">Página de Inicio</a>
-</div>
+        <img src="https://th.bing.com/th/id/OIP.ND8NbL-VC_LeZBEm9rhQ2wHaHx?w=175&h=184&c=7&r=0&o=5&pid=1.7" id="topo">
+		<img src="https://pm1.narvii.com/6305/581b5a67efa523643b02bd626f04aec8997cc059_hq.jpg" id="lobo">
+	</div>
 
 
+
+
+    
+	<img src="https://i.imgur.com/9ThqsgJ.png" id="trofeo" style="display: none;">
+	<div id="trofeoMensaje" style="display: none;">
+		<img src="https://thumbs.dreamstime.com/b/el-logro-de-altos-resultados-80133135.jpg" alt="Trofeo" width="200">
+		<p>¡Felicidades, acertaste!</p>
+        <button onclick="window.location.href='/part_2.html'"style="background-color: orange; color: white; padding: 20px;">Siguiente Nivel</button>
+
+        </div><button onclick="window.location.href='login.html'" style="background-color: orange; color: white; padding: 20px;">Ir al login</button>
+
+	<script>
+		var perro = document.getElementById("perro");
+var gato = document.getElementById("gato");
+var conejo = document.getElementById("conejo");
+var pajaro = document.getElementById("pajaro");
+var topo = document.getElementById("topo");
+var lobo = document.getElementById("lobo");
+var trofeo = document.getElementById("trofeo");
+var trofeoMensaje = document.getElementById("trofeoMensaje");
+
+perro.onclick = function() {
+	if (perro.getAttribute("src") == "https://th.bing.com/th/id/OIP.-DeSsS5WrPJNxTsHttMELQHaH5?w=196&h=209&c=7&r=0&o=5&pid=1.7") {
+		trofeo.style.display = "block";
+		trofeoMensaje.style.display = "flex";
+	}
+}
+gato.onclick = function() {
+	if (gato.getAttribute("src") == "https://th.bing.com/th/id/OIP.EhBW1tWEpmdhJNrCy_d2lwHaIW?w=171&h=193&c=7&r=0&o=5&pid=1.7") {
+		gato.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+conejo.onclick = function() {
+	if (conejo.getAttribute("src") == "https://th.bing.com/th/id/R.96334541e6f519711607aa447a64b927?rik=dn9EZ8XnMJL6xQ&pid=ImgRaw&r=0") {
+		conejo.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+pajaro.onclick = function() {
+	if (pajaro.getAttribute("src") == "https://th.bing.com/th/id/OIP.HYflcWWCFq6Pbnnjos-IJwHaIO?w=173&h=192&c=7&r=0&o=5&pid=1.7") {
+		pajaro.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+topo.onclick = function() {
+	if (topo.getAttribute("src") == "https://th.bing.com/th/id/OIP.ND8NbL-VC_LeZBEm9rhQ2wHaHx?w=175&h=184&c=7&r=0&o=5&pid=1.7") {
+		topo.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+lobo.onclick = function() {
+	if (lobo.getAttribute("src") == "https://pm1.narvii.com/6305/581b5a67efa523643b02bd626f04aec8997cc059_hq.jpg") {
+		lobo.style.opacity = "0.1";
+		
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+
+window.onclick = function(event) {
+	if (event.target == trofeo) {
+		trofeo.style.display = "none";
+		trofeoMensaje.style.display = "none";
+	}
+}
+
+	</script>
+
+<style>
+	body {
+		background-color: #0e0d0d; /* Cambia el color aquí */
+	}
+</style>
+
+
+</body>
 </html>
