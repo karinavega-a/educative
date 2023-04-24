@@ -20,49 +20,108 @@
   </header>
 
     <h3 style="text-align: center; font-family:Goudy Stout;">JUEGO 3</h3>
-    <h2 style="text-align: center; font-style: Goudy stout; ">Selecciona la ardilla que sea diferente de los demás.</h2>
-    <!-- Imágenes -->
     
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBr6hwH5ezVDjUdunYqxSOCBbeFbW1C6kIqAOnKhw7QjMKIgmWI-g0ExRasLkRBVmN5g&usqp=CAU" class="imagen" onclick="(this)">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBr6hwH5ezVDjUdunYqxSOCBbeFbW1C6kIqAOnKhw7QjMKIgmWI-g0ExRasLkRBVmN5g&usqp=CAU" class="imagen" onclick="(this)">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBr6hwH5ezVDjUdunYqxSOCBbeFbW1C6kIqAOnKhw7QjMKIgmWI-g0ExRasLkRBVmN5g&usqp=CAU" class="imagen" onclick="(this)">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBr6hwH5ezVDjUdunYqxSOCBbeFbW1C6kIqAOnKhw7QjMKIgmWI-g0ExRasLkRBVmN5g&usqp=CAU" class="imagen" onclick="(this)">
-    <img src="https://img.freepik.com/vector-premium/ardilla-dibujos-animados-sosteniendo-nuez_29190-5533.jpg?w=2000" class="imagen" onclick="seleccionarImagen(this)">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOBr6hwH5ezVDjUdunYqxSOCBbeFbW1C6kIqAOnKhw7QjMKIgmWI-g0ExRasLkRBVmN5g&usqp=CAU" class="imagen" onclick="(this)">
-    
-    
-    
- <!--Mensaje para mostrar -->
- <div id="mensaje"></div>
+</head>
+<body>
+	<h1>Selecciona la imagen que sea un Gallo</h1>
+	<div id="contenedor">
+		<img src="https://st3.depositphotos.com/7843760/13017/v/950/depositphotos_130175002-stock-illustration-cartoon-hen-and-her-three.jpg" id="Gallina">
+		<img src="https://th.bing.com/th/id/OIP.mrir-jbSsulVdO0VuYgNFwHaFf?w=256&h=190&c=7&r=0&o=5&pid=1.7" id="Pollito">
+		<img src="https://thumbs.dreamstime.com/b/gullig-64041689.jpg" id="Pato">
+        <img src="https://st2.depositphotos.com/7857468/12366/v/950/depositphotos_123664086-stock-illustration-happy-parrot-cartoon.jpg" id="Cotorro">
+		<img src="https://st3.depositphotos.com/7843760/13017/v/950/depositphotos_130175224-stock-illustration-illustration-of-cute-macaw-cartoon.jpg" id="Guacamaya">
+        <img src="https://th.bing.com/th/id/OIP.U0PqC6xK4twIghv1H6Jm-AHaH-?pid=ImgDet&w=205&h=220&c=7" id="Gallo"> <!-correcta->
+	</div>
+
+
+
 
     
- <script>
-   function seleccionarImagen(img) {
-     
-     var imagenes = document.querySelectorAll(".imagen");
-     for (var i = 0; i < imagenes.length; i++) {
-       imagenes[i].classList.remove("seleccionado");
-     }
-     
-     /* la imagen seleccionada */
-     img.classList.add("seleccionado");
-     
-     
-     
-/* mensaje debajo de la imagen seleccionada */
-var mensaje = document.getElementById("mensaje");
-     mensaje.style.display = "block"; /* para mostrar el mensaje */
-     mensaje.innerHTML = "La imagen seleccionada es correcta."; /* Cambia el contenido del mensaje */
-     
+	<img src="https://i.imgur.com/9ThqsgJ.png" id="trofeo" style="display: none;">
+	<div id="trofeoMensaje" style="display: none;">
+		<img src="https://image.freepik.com/vector-gratis/ilustracion-dibujos-animados-vector-trofeo-medalla-oro-premio-ganador-trofeo-oro-campeon_123553-246.jpg" alt="Trofeo" width="200">
+		<p>¡Felicidades, acertaste!</p>
+        <button onclick="window.location.href='nueva_pagina.html'"style="background-color: orange; color: white; padding: 20px;">Siguiente Nivel</button>
 
-   }
+        </div><button onclick="window.location.href='login.html'" style="background-color: orange; color: white; padding: 20px;">Ir al login</button>
 
-</script>
-<div class="footer">
-    <a class="btn" href="part_final.html">Siguiente</a>
-</div>
-<div class="footer">
-    <a class="btn" href="../../math.html">Página de Inicio</a>
-</div>
+	<script>
+var Gallo = document.getElementById("Gallo");
+var Gallina = document.getElementById("Gallina");
+var Pollito = document.getElementById("Pollito");
+var Pato= document.getElementById("Pato");
+var Cotorro = document.getElementById("Cotorro");
+var Guacamaya = document.getElementById("Guacamaya");
+var trofeo = document.getElementById("trofeo");
+var trofeoMensaje = document.getElementById("trofeoMensaje");
 
+Gallo.onclick = function() {
+	if (Gallo.getAttribute("src") == "https://th.bing.com/th/id/OIP.U0PqC6xK4twIghv1H6Jm-AHaH-?pid=ImgDet&w=205&h=220&c=7") {
+		trofeo.style.display = "block";
+		trofeoMensaje.style.display = "flex";
+	}
+}
+Gallina.onclick = function() {
+	if (Gallina.getAttribute("src") == "https://st3.depositphotos.com/7843760/13017/v/950/depositphotos_130175002-stock-illustration-cartoon-hen-and-her-three.jpg") {
+		Gallina.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+Pollito.onclick = function() {
+	if (Pollito.getAttribute("src") == "https://th.bing.com/th/id/OIP.mrir-jbSsulVdO0VuYgNFwHaFf?w=256&h=190&c=7&r=0&o=5&pid=1.7") {
+		Pollito.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+Pato.onclick = function() {
+	if (Pato.getAttribute("src") == "https://thumbs.dreamstime.com/b/gullig-64041689.jpg") {
+		Pato.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+Cotorro.onclick = function() {
+	if (Cotorro.getAttribute("src") == "https://st2.depositphotos.com/7857468/12366/v/950/depositphotos_123664086-stock-illustration-happy-parrot-cartoon.jpg") {
+		Cotorro.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+Guacamaya.onclick = function() {
+	if (Guacamaya.getAttribute("src") == "https://st3.depositphotos.com/7843760/13017/v/950/depositphotos_130175224-stock-illustration-illustration-of-cute-macaw-cartoon.jpg") {
+		Guacamaya.style.opacity = "0.1";
+	
+		alert("LA IMAGEN ES INCORRECTA"); // muestra un mensaje de alerta
+  } else {
+    // si la imagen no es la imagen correcta, puedes agregar aquí alguna otra acción si lo deseas
+  }
+}
+
+window.onclick = function(event) {
+	if (event.target == trofeo) {
+		trofeo.style.display = "none";
+		trofeoMensaje.style.display = "none";
+	}
+}
+
+	</script>
+
+<style>
+	body {
+		background-color: #0e0d0d; /* Cambia el color aquí */
+	}
+</style>
+
+
+</body>
 </html>
