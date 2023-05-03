@@ -50,3 +50,7 @@ h1 {
   color: #ffffff;
   font-family: Arial, sans-serif;
 }
+.footer {
+  display: flex;
+  justify-content: center;
+}
