@@ -35,7 +35,7 @@ palabras_array.push("GRILLO");
 palabras_array.push("VENADO");
 palabras_array.push("GALLINA");
 palabras_array.push("CONEJO");
-palabras_array.push("AGUILA");
+palabras_array.push("ÁGUILA");
 palabras_array.push("ABEJA")
 palabras_array.push("VACA")
         
@@ -149,7 +149,7 @@ function pistaFunction(palabra){
 
 
         default:  // El defaul se puede omitir // 
-            pista="No hay pista aun xP";
+            pista="No hay pista aun ";
     }
   
     ctx.fillStyle = "black";  // color de la letra
